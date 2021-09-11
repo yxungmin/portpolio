@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <title>portpolio</title>
+
+    <link rel="stylesheet" type="text/css" href="plugin/vendor.min.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body class="@@class">
+<div class="wrapper">
+<header>
+	<h1>PORTFOLIO</h1>
+</header>
+
+<div class="content-body">
+    <p class="copyright">yun-youngmin copyright</p>
+    <div class="contents">
+        <div class="bar-item">
+            <strong>01</strong>
+            <div class="text-box">
+                <p>서울시미니태양광</p>
+                <small>html/scss/jquery/JS</small>
+                <span>100%</span>
+            </div>
+            <div class="img-box">
+                <img src="img/01.png" alt="">
+            </div>
+            <p>2019.05</p>
+        </div>
+        <div class="bar-item">
+            <strong>02</strong>
+            <div class="text-box">
+                <p>위트</p>
+                <small>html/scss/jquery/JS</small>
+                <span>100%</span>
+            </div>
+            <div class="img-box">
+                <img src="img/02.png" alt="">
+            </div>
+            <p>2019.12</p>
+        </div>
+        <div class="bar-item">
+            <strong>03</strong>
+            <div class="text-box">
+                <p>프레시스토어</p>
+                <small>html/scss/jquery/JS</small>
+                <span>100%</span>
+            </div>
+            <div class="img-box">
+                <img src="img/03.png" alt="">
+            </div>
+            <p>2020.04</p>
+        </div>
+        <div class="bar-item">
+            <strong>04</strong>
+            <div class="text-box">
+                <p>헤이스타즈</p>
+                <small>html/scss/jquery/JS</small>
+                <span>100%</span>
+            </div>
+            <div class="img-box">
+                <img src="img/04.png" alt="">
+            </div>
+            <p>2020.06</p>
+        </div>
+        <div class="bar-item">
+            <strong>05</strong>
+            <div class="text-box">
+                <p>랜딩페이지</p>
+                <small>html/scss/jquery/JS</small>
+                <span>100%</span>
+            </div>
+            <div class="img-box">
+                <img src="img/05.png" alt="">
+            </div>
+            <p>2019.04 ~</p>
+        </div>
+    </div>
+</div>
+
+<div class="view-folder">
+    <div class="bg-content">
+        <img src="img/01_main.png" alt="" onclick="window.open('http://www.sunnyseoul.com/citizen/index.do')">
+        <img src="img/01_sub01.png" alt="" onclick="window.open('http://www.sunnyseoul.com/citizen/background.do')">
+        <img src="img/01_sub02.png" alt="" onclick="window.open('http://www.sunnyseoul.com/citizen/introduction.do')">
+        <img src="img/01_sub03.png" alt="" onclick="window.open('http://www.sunnyseoul.com/citizen/miniPower.do')">
+    </div>
+    <div class="bg-content">
+        <img src="img/02_main.png" alt="" onclick="window.open('https://www.witkorea.kr/')">
+        <img src="img/02_sub01.png" alt="" onclick="window.open('https://www.witkorea.kr/community/dog?page=1')">
+        <img src="img/02_sub02.png" alt="" onclick="window.open('https://www.witkorea.kr/board/news?type=photo&page=1')">
+    </div>
+    <div class="bg-content">
+        <img src="img/03_main.png" alt="">
+    </div>
+    <div class="bg-content">
+        <img src="img/04_main.png" alt="">
+    </div>
+    <div class="bg-content">
+        <img src="img/05_main01.png" alt="" onclick="window.open('http://www.enjoyon.co.kr/')">
+        <img src="img/05_main02.png" alt="" onclick="window.open('https://goodtraepay.buyeo.go.kr/buyeo/index.html')">
+        <img src="img/05_main03.png" alt="" onclick="window.open('http://www.playmoongu.com/')">
+    </div>
+    <button class="top-btn">
+        <img src="img/top_btn.png" alt="">
+    </button>
+</div>
+
+<footer>
+</footer>
+
+
+</div>
+</body>
+
+<script type="text/javascript" src="plugin/vendor.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</html>
+
+
+
+<script>
+
+    $('.bar-item').click(function(){
+        var thisIndex = $(this).index();
+        $(this).toggleClass('side-position').css('transition','.5s');
+        $(this).siblings('').toggleClass('left-position').css('transition','.5s');
+        $('.bg-content').eq(thisIndex).siblings('.bg-content').addClass('hide');
+        $('.bg-content').eq(thisIndex).removeClass('hide');
+        $('.bg-content').eq(thisIndex).toggleClass('showing').css('transition','.5s');
+
+        $('.view-folder').animate({scrollTop : 0}, 300);
+
+        $('.top-btn').toggleClass('showing').css('transition','.5s');
+    });
+
+    $('.top-btn').click(function(){
+        $('.view-folder').animate({scrollTop : 0}, 300);
+    });
+
+</script>
